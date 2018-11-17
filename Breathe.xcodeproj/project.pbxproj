@@ -97,12 +97,10 @@
 		A58AEDCA21A02DA80053ADD7 /* Breathe */ = {
 			isa = PBXGroup;
 			children = (
+				A58AEDF921A02DC40053ADD7 /* Resources */,
 				A58AEDCB21A02DA80053ADD7 /* AppDelegate.swift */,
 				A58AEDCD21A02DA80053ADD7 /* ViewController.swift */,
 				A58AEDCF21A02DA80053ADD7 /* Main.storyboard */,
-				A58AEDD221A02DA90053ADD7 /* Assets.xcassets */,
-				A58AEDD421A02DA90053ADD7 /* LaunchScreen.storyboard */,
-				A58AEDD721A02DA90053ADD7 /* Info.plist */,
 			);
 			path = Breathe;
 			sourceTree = "<group>";
@@ -123,6 +121,16 @@
 				A58AEDED21A02DAA0053ADD7 /* Info.plist */,
 			);
 			path = BreatheUITests;
+			sourceTree = "<group>";
+		};
+		A58AEDF921A02DC40053ADD7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A58AEDD421A02DA90053ADD7 /* LaunchScreen.storyboard */,
+				A58AEDD721A02DA90053ADD7 /* Info.plist */,
+				A58AEDD221A02DA90053ADD7 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,7 +442,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4KQ9NRRH9N;
-				INFOPLIST_FILE = Breathe/Info.plist;
+				INFOPLIST_FILE = Breathe/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +461,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4KQ9NRRH9N;
-				INFOPLIST_FILE = Breathe/Info.plist;
+				INFOPLIST_FILE = Breathe/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
