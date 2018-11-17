@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "BreatheVisualization", bundle: nil)
+        let breatheVisualizationViewController = storyboard.instantiateViewController(withIdentifier: "BreatheVisualizationViewController") as! BreatheVisualizationViewController
+        let breatheVisualizationViewModel = BreatheVisualizationViewModel()
+        breatheVisualizationViewController.viewModel = breatheVisualizationViewModel
+        self.window?.rootViewController = breatheVisualizationViewController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A58AEDCC21A02DA80053ADD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEDCB21A02DA80053ADD7 /* AppDelegate.swift */; };
 		A58AEDCE21A02DA80053ADD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEDCD21A02DA80053ADD7 /* ViewController.swift */; };
-		A58AEDD121A02DA80053ADD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58AEDCF21A02DA80053ADD7 /* Main.storyboard */; };
 		A58AEDD321A02DA90053ADD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58AEDD221A02DA90053ADD7 /* Assets.xcassets */; };
 		A58AEDD621A02DA90053ADD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58AEDD421A02DA90053ADD7 /* LaunchScreen.storyboard */; };
 		A58AEDE121A02DAA0053ADD7 /* BreatheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEDE021A02DAA0053ADD7 /* BreatheTests.swift */; };
@@ -22,6 +21,9 @@
 		A58AEE0721A073D20053ADD7 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEE0621A073D20053ADD7 /* UIColor+Extensions.swift */; };
 		A58AEE0921A075890053ADD7 /* phases.json in Resources */ = {isa = PBXBuildFile; fileRef = A58AEE0821A075880053ADD7 /* phases.json */; };
 		A58AEE0A21A079340053ADD7 /* phases.json in Resources */ = {isa = PBXBuildFile; fileRef = A58AEE0821A075880053ADD7 /* phases.json */; };
+		A58AEE1021A07E470053ADD7 /* BreatheVisualizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEE0F21A07E470053ADD7 /* BreatheVisualizationViewModel.swift */; };
+		A58AEE1221A07E560053ADD7 /* BreatheVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEE1121A07E560053ADD7 /* BreatheVisualizationViewController.swift */; };
+		A58AEE1521A087C80053ADD7 /* BreatheVisualization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58AEE1421A087C80053ADD7 /* BreatheVisualization.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +47,6 @@
 		A58AEDC821A02DA80053ADD7 /* Breathe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breathe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58AEDCB21A02DA80053ADD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A58AEDCD21A02DA80053ADD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A58AEDD021A02DA80053ADD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A58AEDD221A02DA90053ADD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58AEDD521A02DA90053ADD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A58AEDD721A02DA90053ADD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +63,9 @@
 		A58AEE0421A068090053ADD7 /* BreathePhasesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathePhasesParser.swift; sourceTree = "<group>"; };
 		A58AEE0621A073D20053ADD7 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		A58AEE0821A075880053ADD7 /* phases.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = phases.json; sourceTree = "<group>"; };
+		A58AEE0F21A07E470053ADD7 /* BreatheVisualizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheVisualizationViewModel.swift; sourceTree = "<group>"; };
+		A58AEE1121A07E560053ADD7 /* BreatheVisualizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheVisualizationViewController.swift; sourceTree = "<group>"; };
+		A58AEE1421A087C80053ADD7 /* BreatheVisualization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BreatheVisualization.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +118,9 @@
 			children = (
 				A58AEDCB21A02DA80053ADD7 /* AppDelegate.swift */,
 				A58AEDCD21A02DA80053ADD7 /* ViewController.swift */,
-				A58AEDCF21A02DA80053ADD7 /* Main.storyboard */,
+				A58AEE0B21A07D950053ADD7 /* BreatheVisualization */,
 				A58AEDF921A02DC40053ADD7 /* Resources */,
 				A58AEE0121A04FC00053ADD7 /* Extensions */,
-				A58AEDFA21A02F060053ADD7 /* BreatheStateMachine */,
 			);
 			path = Breathe;
 			sourceTree = "<group>";
@@ -157,7 +160,6 @@
 				A58AEDFF21A033350053ADD7 /* BreatheStateMachineConstants.swift */,
 				A58AEDFB21A030A20053ADD7 /* BreatheStateMachine.swift */,
 				A58AEDFD21A030AE0053ADD7 /* BreatheStates.swift */,
-				A58AEE0421A068090053ADD7 /* BreathePhasesParser.swift */,
 			);
 			path = BreatheStateMachine;
 			sourceTree = "<group>";
@@ -169,6 +171,50 @@
 				A58AEE0621A073D20053ADD7 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A58AEE0B21A07D950053ADD7 /* BreatheVisualization */ = {
+			isa = PBXGroup;
+			children = (
+				A58AEE1321A087B60053ADD7 /* UI */,
+				A58AEE0C21A07DC30053ADD7 /* Controllers */,
+				A58AEE0D21A07DCD0053ADD7 /* ViewModel */,
+				A58AEE0E21A07E0D0053ADD7 /* Model */,
+			);
+			path = BreatheVisualization;
+			sourceTree = "<group>";
+		};
+		A58AEE0C21A07DC30053ADD7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A58AEE1121A07E560053ADD7 /* BreatheVisualizationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A58AEE0D21A07DCD0053ADD7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A58AEE0F21A07E470053ADD7 /* BreatheVisualizationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A58AEE0E21A07E0D0053ADD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A58AEE0421A068090053ADD7 /* BreathePhasesParser.swift */,
+				A58AEDFA21A02F060053ADD7 /* BreatheStateMachine */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A58AEE1321A087B60053ADD7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A58AEE1421A087C80053ADD7 /* BreatheVisualization.storyboard */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +323,7 @@
 			files = (
 				A58AEDD621A02DA90053ADD7 /* LaunchScreen.storyboard in Resources */,
 				A58AEDD321A02DA90053ADD7 /* Assets.xcassets in Resources */,
-				A58AEDD121A02DA80053ADD7 /* Main.storyboard in Resources */,
+				A58AEE1521A087C80053ADD7 /* BreatheVisualization.storyboard in Resources */,
 				A58AEE0921A075890053ADD7 /* phases.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +358,8 @@
 				A58AEDFC21A030A20053ADD7 /* BreatheStateMachine.swift in Sources */,
 				A58AEE0521A068090053ADD7 /* BreathePhasesParser.swift in Sources */,
 				A58AEE0321A04FD70053ADD7 /* Collection+Extensions.swift in Sources */,
+				A58AEE1021A07E470053ADD7 /* BreatheVisualizationViewModel.swift in Sources */,
+				A58AEE1221A07E560053ADD7 /* BreatheVisualizationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,14 +395,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A58AEDCF21A02DA80053ADD7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A58AEDD021A02DA80053ADD7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A58AEDD421A02DA90053ADD7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

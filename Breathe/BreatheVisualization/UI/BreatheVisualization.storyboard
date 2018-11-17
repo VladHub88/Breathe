@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Breathe Visualization View Controller-->
+        <scene sceneID="Hh6-G4-dVy">
+            <objects>
+                <viewController storyboardIdentifier="BreatheVisualizationViewController" id="KA7-JF-0js" customClass="BreatheVisualizationViewController" customModule="Breathe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f8H-o5-QrH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToJ-QY-SZL">
+                                <rect key="frame" x="67.5" y="80" width="240" height="240"/>
+                                <color key="backgroundColor" red="0.0" green="0.6360913212" blue="0.051372149559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="deG-Sw-cek"/>
+                                    <constraint firstAttribute="width" secondItem="ToJ-QY-SZL" secondAttribute="height" multiplier="1:1" id="e2Q-w3-DDB"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nUR-Jh-mRq" appends="YES" id="emF-5v-3Gq"/>
+                                </connections>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eoe-3v-aBw" userLabel="Phase Details Stack">
+                                <rect key="frame" x="134.5" y="179.5" width="106" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHASE NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-ez-mGa">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-sq-Sh9">
+                                        <rect key="frame" x="0.0" y="20.5" width="106" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JqL-Tm-mdb" userLabel="Execution Remaining Time Stack">
+                                <rect key="frame" x="145.5" y="598" width="84.5" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfH-cM-0Zr">
+                                        <rect key="frame" x="0.0" y="0.0" width="84.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2B-tv-WJE">
+                                        <rect key="frame" x="0.0" y="20.5" width="84.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FYF-sA-QnI" firstAttribute="bottom" secondItem="JqL-Tm-mdb" secondAttribute="bottom" constant="28" id="529-dP-ooW"/>
+                            <constraint firstItem="JqL-Tm-mdb" firstAttribute="centerX" secondItem="f8H-o5-QrH" secondAttribute="centerX" id="DvK-ZW-ULO"/>
+                            <constraint firstItem="Eoe-3v-aBw" firstAttribute="centerY" secondItem="ToJ-QY-SZL" secondAttribute="centerY" id="G0u-mM-YJI"/>
+                            <constraint firstItem="ToJ-QY-SZL" firstAttribute="centerY" secondItem="f8H-o5-QrH" secondAttribute="centerY" multiplier="0.6" id="KSn-a9-583"/>
+                            <constraint firstItem="JqL-Tm-mdb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ToJ-QY-SZL" secondAttribute="bottom" constant="8" id="cu4-Aq-MIb"/>
+                            <constraint firstItem="ToJ-QY-SZL" firstAttribute="centerX" secondItem="f8H-o5-QrH" secondAttribute="centerX" id="sMV-lb-cbf"/>
+                            <constraint firstItem="Eoe-3v-aBw" firstAttribute="centerX" secondItem="ToJ-QY-SZL" secondAttribute="centerX" id="yoZ-Wo-ruO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FYF-sA-QnI"/>
+                    </view>
+                    <connections>
+                        <outlet property="phaseNameLabel" destination="rjb-ez-mGa" id="VgV-pR-TmO"/>
+                        <outlet property="phaseRemainingLabel" destination="o2B-sq-Sh9" id="0N8-Za-24g"/>
+                        <outlet property="remainingTitleLabel" destination="xfH-cM-0Zr" id="fRy-az-wea"/>
+                        <outlet property="remainingValueLabel" destination="G2B-tv-WJE" id="ImA-gh-J09"/>
+                        <outlet property="squareView" destination="ToJ-QY-SZL" id="b6A-kf-Gzk"/>
+                        <outlet property="squareViewSideLengthConstraint" destination="deG-Sw-cek" id="bpZ-dE-2gc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dqw-g6-8gM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nUR-Jh-mRq">
+                    <connections>
+                        <action selector="handleSquareViewTap:" destination="KA7-JF-0js" id="zv8-b8-97W"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="0.80000000000000004" y="3.1484257871064472"/>
+        </scene>
+    </scenes>
+</document>
