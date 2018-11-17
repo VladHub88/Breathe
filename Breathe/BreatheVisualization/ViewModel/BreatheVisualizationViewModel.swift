@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import RxSwift
 
 class BreatheVisualizationViewModel {
     var breatheStateMachine: BreatheStateMachine?
     let notificationCenter = NotificationCenter.default
+    
+    var currentBreathePhase = BehaviorSubject<BreathePhase?>(value: nil)
 
     init(breathePhasesJsonName: String = "phases") {
         let bundle = Bundle(for: type(of: self))
