@@ -10,13 +10,17 @@ import Foundation
 import UIKit
 
 enum BreathePhaseType: String {
-    case auxiliary, hold, inhale, exhale
+    case auxiliaryStart, auxiliaryEnd, hold, inhale, exhale
 }
 
 struct BreathePhase {
     let type: BreathePhaseType
     let color: UIColor
     let duration: TimeInterval
+    
+    var isAuxiliary: Bool {
+        return type == .auxiliaryStart || type == .auxiliaryEnd
+    }
 }
 
 class BreathePhasesParser {

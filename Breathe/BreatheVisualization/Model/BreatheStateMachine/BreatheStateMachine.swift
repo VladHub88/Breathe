@@ -18,7 +18,7 @@ class BreatheStateMachine {
         }
         
         let breatheStateOff = BreatheStateOff()
-        let breatheStateOn = BreatheStateOn(phasesQueue: baseBreathePhases)
+        let breatheStateOn = BreatheStateOn(phasesQueue: BreatheStateMachine.addedAuxiliaryStartAndEndPhases(baseBreathePhases))
         let breatheStates = [breatheStateOff, breatheStateOn]
         
         self.init(states: breatheStates, initialStateIdx: 0)
@@ -36,5 +36,13 @@ class BreatheStateMachine {
     
     func handleTap() {
         (stateMachine.currentState as? BreatheState)?.handleTap()
+    }
+    
+    // MARK: - Private
+    
+    class func addedAuxiliaryStartAndEndPhases(_ breathePhases: [BreathePhase]) -> [BreathePhase] {
+        let auxiliaryStartPhase = BreathePhase(type: .auxiliaryStart, color: UIColor(hexString: "2CFEFE"), duration: 2.0)
+        let auxiliaryEndPhase = BreathePhase(type: .auxiliaryEnd, color: UIColor(hexString: "2CFEFE"), duration: 1.0)
+        return [[auxiliaryStartPhase], breathePhases, [auxiliaryEndPhase]].flatMap({ $0 })
     }
 }

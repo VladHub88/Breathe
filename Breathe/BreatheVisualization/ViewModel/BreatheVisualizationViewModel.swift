@@ -23,7 +23,7 @@ class BreatheVisualizationViewModel {
     var hideTapHintLabel = BehaviorSubject<Bool>(value: true)
     var hideTimerLabels = BehaviorSubject<Bool>(value: false)
     var squareViewBreatheAnimation = BehaviorSubject<BreatheAnimationDataStruct?>(value: nil)
-    var squareViewColor = BehaviorSubject<UIColor?>(value: UIColor.green)
+    var squareViewColor = BehaviorSubject<UIColor?>(value: UIColor(hexString: "2CFEFE"))
     var totalExecutionTimeLeft = BehaviorSubject<String>(value: "00:00")
     var phaseExecutionTimeLeft = BehaviorSubject<String>(value: "00:00")
 
@@ -70,16 +70,27 @@ class BreatheVisualizationViewModel {
             self?.squareViewColor.onNext(breathePhase.color)
             self?.phaseName.onNext(breathePhase.type.rawValue.uppercased())
             
+            var scaleMultiplier: CGFloat? = nil
             switch breathePhase.type {
+            case .auxiliaryStart:
+                scaleMultiplier = 0.75
+            case .auxiliaryEnd:
+                scaleMultiplier = 1.0
             case .inhale:
-                let breatheAnimation = BreatheAnimationDataStruct(scaleMultiplier: 0.5, duration: breathePhase.duration)
-                self?.squareViewBreatheAnimation.onNext(breatheAnimation)
+                scaleMultiplier = 0.5
             case .exhale:
-                let breatheAnimation = BreatheAnimationDataStruct(scaleMultiplier: 1.0, duration: breathePhase.duration)
-                self?.squareViewBreatheAnimation.onNext(breatheAnimation)
+                scaleMultiplier = 1.0
             default:
                 break
             }
+            
+            if let scaleMultiplierUnwrapped = scaleMultiplier {
+                let breatheAnimation = BreatheAnimationDataStruct(scaleMultiplier: scaleMultiplierUnwrapped, duration: breathePhase.duration)
+                self?.squareViewBreatheAnimation.onNext(breatheAnimation)
+            }
+            
+            
+            self?.hideTimerLabels.onNext(breathePhase.type == .auxiliaryStart || breathePhase.type == .auxiliaryEnd)
         }
         
         notificationCenter.addObserver(forName: BreatheStateMachineNotifications.executionTimerUpdated, object: nil, queue: .main) { [weak self] notification in
