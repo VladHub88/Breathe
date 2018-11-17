@@ -20,7 +20,33 @@ struct BreathePhase {
 }
 
 class BreathePhasesParser {
-    class func parse(jsonData: Data) throws -> [BreathePhase] {
-        return []
+    class func parse(jsonData: Data) -> [BreathePhase]? {
+        guard let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] else {
+            print("Failed to deserialize breathe phases from given json data.")
+            return nil
+        }
+        
+        let result = json?.compactMap({ phaseJson -> BreathePhase? in
+            guard let typeString = phaseJson[Constants.typeKey] as? String,
+                let type = BreathePhaseType(rawValue: typeString),
+                let duration = phaseJson[Constants.durationKey] as? TimeInterval,
+                let colorHex = phaseJson[Constants.colorKey] as? String else {
+                
+                print("Failed to parse breathe phase with json: \(phaseJson)")
+                return nil
+            }
+            
+            return BreathePhase(type: type, color: UIColor(hexString: colorHex), duration: duration)
+        })
+
+        return result
+    }
+    
+    // MARK: - Private
+    
+    private struct Constants {
+        static let typeKey = "type"
+        static let durationKey = "duration"
+        static let colorKey = "color"
     }
 }

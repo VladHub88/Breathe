@@ -12,7 +12,7 @@ class BreatheStateMachine {
     private var stateMachine: GKStateMachine!
     
     convenience init?(jsonData: Data) {
-        guard let baseBreathePhases = try? BreathePhasesParser.parse(jsonData: jsonData) else {
+        guard let baseBreathePhases = BreathePhasesParser.parse(jsonData: jsonData) else {
             print("Failed to initialize breathe state machine due to incorrect json data provided")
             return nil
         }
