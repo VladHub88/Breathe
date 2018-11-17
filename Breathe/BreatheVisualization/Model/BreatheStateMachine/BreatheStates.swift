@@ -44,23 +44,36 @@ class BreatheStateOn: BreatheState {
     
     override func didEnter(from previousState: GKState?) {
         super.didEnter(from: previousState)
-        executionTimer = Timer(fire: Date(), interval: 1, repeats: true, block: { timer in
-            // TODO: Handle execution timer
-        })
+        
+        var totalExecutionTimeLeft: TimeInterval = 0
+        phasesQueue.filter({ $0.type != .auxiliary }).forEach { breathePhase in
+            totalExecutionTimeLeft += breathePhase.duration
+        }
+        
+        totalExecutionTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
+            guard let self = self else { return }
+            totalExecutionTimeLeft -= 1
+            let userInfo = [BreatheStateMachineNotifications.totalExecutionTimeKey: totalExecutionTimeLeft]
+            self.notificationCenter.post(name: BreatheStateMachineNotifications.executionTimerUpdated, object: nil, userInfo: userInfo)
+        }
+        totalExecutionTimer?.fire()
         executeBreathePhase(at: phasesQueue.startIndex, phasesQueue: phasesQueue)
     }
     
     override func willExit(to nextState: GKState) {
         super.willExit(to: nextState)
         dispatchedBreathePhase?.cancel()
-        executionTimer?.invalidate()
-        executionTimer = nil
+        totalExecutionTimer?.invalidate()
+        totalExecutionTimer = nil
+        phaseExecutionTimer?.invalidate()
+        phaseExecutionTimer = nil
     }
     
     // MARK: - Private
     
     private let phasesQueue: [BreathePhase]
-    private var executionTimer: Timer?
+    private var totalExecutionTimer: Timer?
+    private var phaseExecutionTimer: Timer?
     private var dispatchedBreathePhase: DispatchWorkItem?
     
     private func executeBreathePhase(at phaseIdx: Int, phasesQueue:[BreathePhase]) {
@@ -71,6 +84,20 @@ class BreatheStateOn: BreatheState {
         }
         
         print("Executing phase \(phase.type.rawValue)")
+        
+        phaseExecutionTimer?.invalidate()
+        phaseExecutionTimer = nil
+        if phase.type != .auxiliary {
+            var phaseExecutionTimeLeft: TimeInterval = phase.duration
+            phaseExecutionTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
+                guard let self = self else { return }
+                phaseExecutionTimeLeft -= 1
+                let userInfo = [BreatheStateMachineNotifications.phaseExecutionTimeKey: phaseExecutionTimeLeft]
+                self.notificationCenter.post(name: BreatheStateMachineNotifications.executionTimerUpdated, object: nil, userInfo: userInfo)
+            }
+            phaseExecutionTimer?.fire()
+        }
+        
         notificationCenter.post(name: BreatheStateMachineNotifications.breathePhaseChanged, object: nil, userInfo: [BreatheStateMachineNotifications.phaseKey: phase])
         
         let duration = phase.duration

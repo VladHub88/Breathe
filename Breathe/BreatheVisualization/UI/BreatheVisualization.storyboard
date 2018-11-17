@@ -30,7 +30,7 @@
                                     <outletCollection property="gestureRecognizers" destination="nUR-Jh-mRq" appends="YES" id="emF-5v-3Gq"/>
                                 </connections>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eoe-3v-aBw" userLabel="Phase Details Stack">
+                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eoe-3v-aBw" userLabel="Phase Details Stack">
                                 <rect key="frame" x="134.5" y="179.5" width="106" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHASE NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-ez-mGa">
@@ -47,6 +47,12 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP HERE TO BREATHE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-cb-K1U">
+                                <rect key="frame" x="96.5" y="190" width="182" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JqL-Tm-mdb" userLabel="Execution Remaining Time Stack">
                                 <rect key="frame" x="145.5" y="598" width="84.5" height="41"/>
                                 <subviews>
@@ -72,18 +78,23 @@
                             <constraint firstItem="Eoe-3v-aBw" firstAttribute="centerY" secondItem="ToJ-QY-SZL" secondAttribute="centerY" id="G0u-mM-YJI"/>
                             <constraint firstItem="ToJ-QY-SZL" firstAttribute="centerY" secondItem="f8H-o5-QrH" secondAttribute="centerY" multiplier="0.6" id="KSn-a9-583"/>
                             <constraint firstItem="JqL-Tm-mdb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ToJ-QY-SZL" secondAttribute="bottom" constant="8" id="cu4-Aq-MIb"/>
+                            <constraint firstItem="gwO-cb-K1U" firstAttribute="centerX" secondItem="ToJ-QY-SZL" secondAttribute="centerX" id="emX-dh-d2S"/>
                             <constraint firstItem="ToJ-QY-SZL" firstAttribute="centerX" secondItem="f8H-o5-QrH" secondAttribute="centerX" id="sMV-lb-cbf"/>
+                            <constraint firstItem="gwO-cb-K1U" firstAttribute="centerY" secondItem="ToJ-QY-SZL" secondAttribute="centerY" id="vgN-SM-FAH"/>
                             <constraint firstItem="Eoe-3v-aBw" firstAttribute="centerX" secondItem="ToJ-QY-SZL" secondAttribute="centerX" id="yoZ-Wo-ruO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FYF-sA-QnI"/>
                     </view>
                     <connections>
+                        <outlet property="phaseDescriptionStackView" destination="Eoe-3v-aBw" id="JX6-mq-PIV"/>
                         <outlet property="phaseNameLabel" destination="rjb-ez-mGa" id="VgV-pR-TmO"/>
                         <outlet property="phaseRemainingLabel" destination="o2B-sq-Sh9" id="0N8-Za-24g"/>
+                        <outlet property="remainingTimeStackView" destination="JqL-Tm-mdb" id="U7H-Yw-i5V"/>
                         <outlet property="remainingTitleLabel" destination="xfH-cM-0Zr" id="fRy-az-wea"/>
                         <outlet property="remainingValueLabel" destination="G2B-tv-WJE" id="ImA-gh-J09"/>
                         <outlet property="squareView" destination="ToJ-QY-SZL" id="b6A-kf-Gzk"/>
                         <outlet property="squareViewSideLengthConstraint" destination="deG-Sw-cek" id="bpZ-dE-2gc"/>
+                        <outlet property="tapHereToBreatheLabel" destination="gwO-cb-K1U" id="4rS-DC-eva"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqw-g6-8gM" userLabel="First Responder" sceneMemberID="firstResponder"/>
