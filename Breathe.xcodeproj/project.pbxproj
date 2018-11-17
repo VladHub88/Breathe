@@ -14,6 +14,11 @@
 		A58AEDD621A02DA90053ADD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58AEDD421A02DA90053ADD7 /* LaunchScreen.storyboard */; };
 		A58AEDE121A02DAA0053ADD7 /* BreatheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEDE021A02DAA0053ADD7 /* BreatheTests.swift */; };
 		A58AEDEC21A02DAA0053ADD7 /* BreatheUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEDEB21A02DAA0053ADD7 /* BreatheUITests.swift */; };
+		A58AEDFC21A030A20053ADD7 /* BreatheStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEDFB21A030A20053ADD7 /* BreatheStateMachine.swift */; };
+		A58AEDFE21A030AE0053ADD7 /* BreatheStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEDFD21A030AE0053ADD7 /* BreatheStates.swift */; };
+		A58AEE0021A033350053ADD7 /* BreatheStateMachineConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEDFF21A033350053ADD7 /* BreatheStateMachineConstants.swift */; };
+		A58AEE0321A04FD70053ADD7 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEE0221A04FD70053ADD7 /* Collection+Extensions.swift */; };
+		A58AEE0521A068090053ADD7 /* BreathePhasesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AEE0421A068090053ADD7 /* BreathePhasesParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		A58AEDE721A02DAA0053ADD7 /* BreatheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreatheUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58AEDEB21A02DAA0053ADD7 /* BreatheUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheUITests.swift; sourceTree = "<group>"; };
 		A58AEDED21A02DAA0053ADD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A58AEDFB21A030A20053ADD7 /* BreatheStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheStateMachine.swift; sourceTree = "<group>"; };
+		A58AEDFD21A030AE0053ADD7 /* BreatheStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheStates.swift; sourceTree = "<group>"; };
+		A58AEDFF21A033350053ADD7 /* BreatheStateMachineConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheStateMachineConstants.swift; sourceTree = "<group>"; };
+		A58AEE0221A04FD70053ADD7 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		A58AEE0421A068090053ADD7 /* BreathePhasesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathePhasesParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +107,12 @@
 		A58AEDCA21A02DA80053ADD7 /* Breathe */ = {
 			isa = PBXGroup;
 			children = (
-				A58AEDF921A02DC40053ADD7 /* Resources */,
 				A58AEDCB21A02DA80053ADD7 /* AppDelegate.swift */,
 				A58AEDCD21A02DA80053ADD7 /* ViewController.swift */,
 				A58AEDCF21A02DA80053ADD7 /* Main.storyboard */,
+				A58AEDF921A02DC40053ADD7 /* Resources */,
+				A58AEE0121A04FC00053ADD7 /* Extensions */,
+				A58AEDFA21A02F060053ADD7 /* BreatheStateMachine */,
 			);
 			path = Breathe;
 			sourceTree = "<group>";
@@ -131,6 +143,25 @@
 				A58AEDD221A02DA90053ADD7 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A58AEDFA21A02F060053ADD7 /* BreatheStateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				A58AEDFF21A033350053ADD7 /* BreatheStateMachineConstants.swift */,
+				A58AEDFB21A030A20053ADD7 /* BreatheStateMachine.swift */,
+				A58AEDFD21A030AE0053ADD7 /* BreatheStates.swift */,
+				A58AEE0421A068090053ADD7 /* BreathePhasesParser.swift */,
+			);
+			path = BreatheStateMachine;
+			sourceTree = "<group>";
+		};
+		A58AEE0121A04FC00053ADD7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A58AEE0221A04FD70053ADD7 /* Collection+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58AEE0021A033350053ADD7 /* BreatheStateMachineConstants.swift in Sources */,
 				A58AEDCE21A02DA80053ADD7 /* ViewController.swift in Sources */,
+				A58AEDFE21A030AE0053ADD7 /* BreatheStates.swift in Sources */,
 				A58AEDCC21A02DA80053ADD7 /* AppDelegate.swift in Sources */,
+				A58AEDFC21A030A20053ADD7 /* BreatheStateMachine.swift in Sources */,
+				A58AEE0521A068090053ADD7 /* BreathePhasesParser.swift in Sources */,
+				A58AEE0321A04FD70053ADD7 /* Collection+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
